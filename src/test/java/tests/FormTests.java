@@ -1,31 +1,16 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
-import static com.codeborne.selenide.Condition.appear;
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.sleep;
-
 public class FormTests extends TestBase {
-
-    @BeforeAll
-    public static void browserConfiguration() {
-        Configuration.browser = "chrome";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.browserSize = "1920x1080";
-    }
 
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     void RegistrationFormAllFieldsTest() {
         registrationPage.openPage().
+                removeBanners().
                 setFirstName("test1").
                 setLastName("test1").
                 setUserEmail("test1@local.local").
@@ -57,6 +42,7 @@ public class FormTests extends TestBase {
     @Test
     void RegistrationFormMinFieldsTest(){
         registrationPage.openPage().
+                removeBanners().
                 setFirstName("test1").
                 setLastName("test1").
                 setUserEmail("test1@local.local").
@@ -72,5 +58,19 @@ public class FormTests extends TestBase {
                 .checkResuls("Gender", "Female")
                 .checkResuls("Mobile", "8963598710")
                 .checkResuls("Date of Birth", "30 July,1990");
+    }
+
+    @Test
+    void RegistrationFormNegativeTest(){
+        registrationPage.openPage().
+                removeBanners().
+                setFirstName("test1").
+                setUserEmail("test1@local.local").
+                setUserGender("Female").
+                setUserNumber("8963598710").
+                setDateOfBirth("30", "July", "1990").
+                clickSubmitButton();
+
+        registrationPage.checkTableResultsNotAppear();
     }
 }

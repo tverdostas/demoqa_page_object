@@ -40,6 +40,11 @@ public class RegistrationPage extends TestBase {
     public RegistrationPage openPage(){
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Practice Form"));
+
+        return this;
+    }
+
+    public RegistrationPage removeBanners(){
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
@@ -122,6 +127,12 @@ public class RegistrationPage extends TestBase {
 
         public RegistrationPage checkTableResultsAppear(){
             modalDialog.should(appear);
+
+        return this;
+    }
+
+    public RegistrationPage checkTableResultsNotAppear(){
+        modalDialog.shouldNot(appear);
 
         return this;
     }
