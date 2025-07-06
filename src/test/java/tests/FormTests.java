@@ -73,7 +73,25 @@ public class FormTests extends TestBase {
                 setUserNumber("8963598710").
                 setDateOfBirth("30", "July", "1990").
                 setSubjects("Social Studies").
-                setUserHobbies("Music");
+                setUserHobbies("Music").
+                uploadUserPhoto("test_summer_copy.jpg").
+                setUserAddress("test_address").
+                setUserState("NCR").
+                setUserCity("Gurgaon").
+                clickSubmitButton();
+
+        registrationPage.checkTableResultsAppear()
+                .checkTableResultsHeader()
+                .checkResuls("Student Name", "test1 test1")
+                .checkResuls("Student Email", "test1@local.local")
+                .checkResuls("Gender", "Female")
+                .checkResuls("Mobile", "8963598710")
+                .checkResuls("Date of Birth", "30 July,1990")
+                .checkResuls("Subjects", "Social Studies")
+                .checkResuls("Hobbies", "Music")
+                .checkResuls("Picture", "test_summer_copy.jpg")
+                .checkResuls("Address", "test_address")
+                .checkResuls("State and City", "NCR Gurgaon");
 
         sleep(10000);
         // $("#genterWrapper").$(byText("Female")).click();
@@ -84,27 +102,30 @@ public class FormTests extends TestBase {
         $(".react-datepicker__day--030:not(.react-datepicker__day--outside-month)").click();*/
         //$("#subjectsInput").setValue("Social Studies").pressEnter();
         //$("#hobbiesWrapper").$(byText("Music")).click();
-        $("#uploadPicture").uploadFromClasspath("test_summer_copy.jpg"); // только для элементов с type = "file"
-        $("#currentAddress").setValue("test_address");
-        $("#state").click();
-        $("#stateCity-wrapper").$(byText("NCR")).click();
-        $("#city").click();
-        $("#stateCity-wrapper").$(byText("Gurgaon")).click();
-        $("#submit").click();
+        //$("#uploadPicture").uploadFromClasspath("test_summer_copy.jpg"); // только для элементов с type = "file"
+        // $("#currentAddress").setValue("test_address");
 
-        $(".modal-dialog").should(appear);
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+/*        $("#state").click();
+        $("#stateCity-wrapper").$(byText("NCR")).click();*/
+
+/*        $("#city").click();
+        $("#stateCity-wrapper").$(byText("Gurgaon")).click();
+
+        $("#submit").click();*/
+
+/*        $(".modal-dialog").should(appear);
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));*/
 
         // registrationPage.checkResuls("Student Name", "test1 test1");
-        $(".table-responsive").shouldHave(Condition.text("Student Name test1 test1"));
+/*        $(".table-responsive").shouldHave(Condition.text("Student Name test1 test1"));
         $(".table-responsive").shouldHave(Condition.text("Student Email test1@local.local"));
         $(".table-responsive").shouldHave(Condition.text("Gender Female"));
-        $(".table-responsive").shouldHave(Condition.text("Mobile 8963598710"));
-        $(".table-responsive").shouldHave(Condition.text("Date of Birth 30 July,1990"));
+        $(".table-responsive").shouldHave(Condition.text("Mobile 8963598710"));*/
+/*        $(".table-responsive").shouldHave(Condition.text("Date of Birth 30 July,1990"));
         $(".table-responsive").shouldHave(Condition.text("Subjects Social Studies"));
         $(".table-responsive").shouldHave(Condition.text("Hobbies Music"));
         $(".table-responsive").shouldHave(Condition.text("Picture test_summer_copy.jpg"));
         $(".table-responsive").shouldHave(Condition.text("Address test_address"));
-        $(".table-responsive").shouldHave(Condition.text("State and City NCR Gurgaon"));
+        $(".table-responsive").shouldHave(Condition.text("State and City NCR Gurgaon"));*/
     }
 }
