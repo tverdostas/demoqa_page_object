@@ -21,8 +21,14 @@ public class TextBoxPage {
     public TextBoxPage openPage(){
         open("/text-box");
         $(".text-center").shouldHave(text("Text Box"));
+
+        return this;
+    }
+
+    public TextBoxPage removeBanners(){
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+
         return this;
     }
 

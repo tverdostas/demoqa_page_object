@@ -9,12 +9,12 @@ public class TextBoxTests extends TestBase {
     String userEmail = "katrin.dean@gmail.com";
     String userCurrentAddress = "Test current address";
     String userPermanentAddress = "Test permanent address";
-
     TextBoxPage textBoxPage = new TextBoxPage();
 
     @Test
     void FillFormTextBoxTest(){
         textBoxPage.openPage().
+                removeBanners().
                 setUserFullName(userFullName).
                 setUserEmail(userEmail).
                 setCurrentAddress(userCurrentAddress).
