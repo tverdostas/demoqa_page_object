@@ -8,7 +8,7 @@ public class FormTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
-    void RegistrationFormAllFieldsTest() {
+    void registrationFormAllFieldsTest() {
         registrationPage.openPage().
                 removeBanners().
                 setFirstName("test1").
@@ -40,7 +40,7 @@ public class FormTests extends TestBase {
     }
 
     @Test
-    void RegistrationFormMinFieldsTest(){
+    void registrationFormMinFieldsTest(){
         registrationPage.openPage().
                 removeBanners().
                 setFirstName("test1").
@@ -61,7 +61,7 @@ public class FormTests extends TestBase {
     }
 
     @Test
-    void RegistrationFormNegativeTest(){
+    void registrationFormNegativeTest(){
         registrationPage.openPage().
                 removeBanners().
                 setFirstName("test1").

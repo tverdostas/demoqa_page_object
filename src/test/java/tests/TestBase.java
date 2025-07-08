@@ -4,9 +4,6 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import pages.TextBoxPage;
-
-import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class TestBase {
     @BeforeAll

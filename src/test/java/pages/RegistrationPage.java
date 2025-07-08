@@ -1,11 +1,9 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.selector.ByText;
 import pages.components.CalendarComponent;
 import pages.components.CheckResulTable;
 import pages.components.UploadFileComponent;
-import tests.TestBase;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.text;
@@ -13,7 +11,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-public class RegistrationPage extends TestBase {
+public class RegistrationPage {
 
     private final SelenideElement firstNameInput = $("#firstName"),
     lastNameInput = $("#lastName"),
