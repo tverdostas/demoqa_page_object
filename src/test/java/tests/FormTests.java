@@ -2,6 +2,7 @@ package tests;
 
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
+import utils.RandomUtils;
 
 public class FormTests extends TestBase {
 
@@ -11,7 +12,7 @@ public class FormTests extends TestBase {
     void registrationFormAllFieldsTest() {
         registrationPage.openPage().
                 removeBanners().
-                setFirstName("test1").
+                setFirstName(RandomUtils.getUserName()).
                 setLastName("test1").
                 setUserEmail("test1@local.local").
                 setUserGender("Female").
