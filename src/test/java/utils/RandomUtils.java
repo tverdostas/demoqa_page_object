@@ -4,6 +4,8 @@ import com.github.javafaker.Faker;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+import static java.lang.String.format;
+
 
 public class RandomUtils {
 
@@ -12,7 +14,7 @@ public class RandomUtils {
     static String userLastName = faker.name().lastName();
     static String userEmail = userFirstName.toLowerCase() + "." + userLastName.toLowerCase() + "@gmail.com";
     static String userPhoneNumber = faker.phoneNumber().subscriberNumber(10);
-    static String userDayOfBirth;
+    static String userBirthDay;
 
     public static String getUserPhoneNumber() {
         return userPhoneNumber;
@@ -27,6 +29,10 @@ public class RandomUtils {
 
     public static String getUserEmail() {
         return userEmail;
+    }
+
+    public static String getUserBirthDay() {
+        return format("%02d", faker.number().numberBetween(1, 9));
     }
 
     public static int getRandomInt(int min, int max){
