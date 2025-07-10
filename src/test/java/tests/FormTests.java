@@ -12,11 +12,11 @@ public class FormTests extends TestBase {
     void registrationFormAllFieldsTest() {
         registrationPage.openPage().
                 removeBanners().
-                setFirstName(RandomUtils.getUserName()).
-                setLastName("test1").
-                setUserEmail("test1@local.local").
-                setUserGender("Female").
-                setUserNumber("8963598710").
+                setFirstName(RandomUtils.getUserFirstName()).
+                setLastName(RandomUtils.getUserLastName()).
+                setUserEmail(RandomUtils.getUserEmail()).
+                setUserGender(RandomUtils.getRandomGender()).
+                setUserNumber(RandomUtils.getUserPhoneNumber()).
                 setDateOfBirth("30", "July", "1990").
                 setSubjects("Social Studies").
                 setUserHobbies("Music").
