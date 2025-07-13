@@ -3,7 +3,6 @@ package utils;
 import com.github.javafaker.Faker;
 
 import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.String.format;
 
@@ -73,20 +72,5 @@ return faker.options().option("English", "Maths", "Physics", "Chemistry", "Compu
     public static String getUserCity(String state) {
         return faker.options().option(mapStateWithCity.get(state));
     }
-
-    public static String city = getUserCity(getUserState());
-
-    public static int getRandomInt(int min, int max){
-        return ThreadLocalRandom.current().nextInt(min, max + 1);
-    }
-
-    public static String getRandomItemFromArray(String[] array){
-        int index = getRandomInt(0, array.length - 1);
-
-        return array[index];
-    }
-
-
-
 
 }

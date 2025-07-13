@@ -8,7 +8,6 @@ public class TestData {
     static String userLastName = RandomUtils.getUserLastName();
     static String userEmail = RandomUtils.getUserEmail();
     static String userGender = RandomUtils.getUserGender();
-    static String getUserPhoneNumber = RandomUtils.getUserPhoneNumber();
     static String userPhoneNumber = RandomUtils.getUserPhoneNumber();
     static String userBirthDay = RandomUtils.getUserBirthDay();
     static String userMonthOfBirth = RandomUtils.getUserMonthOfBirth();
@@ -34,10 +33,6 @@ public class TestData {
 
     public static String getUserGender() {
         return userGender;
-    }
-
-    public static String getGetUserPhoneNumber() {
-        return getUserPhoneNumber;
     }
 
     public static String getUserPhoneNumber() {

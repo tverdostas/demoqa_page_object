@@ -21,7 +21,6 @@ public class RegistrationPage {
     userDateOfBirth = $("#dateOfBirthInput"),
     userSubjects = $("#subjectsInput"),
     userHobbies = $("#hobbiesWrapper"),
-    // userPictureUpload = $("#uploadPicture");
     userAddress = $("#currentAddress"),
     userStateField = $("#state"),
     userStateWrapper = $("#stateCity-wrapper"),
