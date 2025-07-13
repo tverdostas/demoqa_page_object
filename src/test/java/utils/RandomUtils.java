@@ -11,37 +11,35 @@ import static java.lang.String.format;
 public class RandomUtils {
 
     static Faker faker = new Faker();
-    static String userFirstName = faker.name().firstName();
-    static String userLastName = faker.name().lastName();
-    static String userEmail = userFirstName.toLowerCase() + "." + userLastName.toLowerCase() + "@gmail.com";
-    static String userPhoneNumber = faker.phoneNumber().subscriberNumber(10);
-    static String userBirthDay;
-
-    public static String getUserPhoneNumber() {
-        return userPhoneNumber;
-    }
 
     public static String getUserFirstName() {
-        return userFirstName;
+        return faker.name().firstName();
     }
     public static String getUserLastName() {
-        return userLastName;
+        return faker.name().lastName();
     }
 
     public static String getUserEmail() {
-        return userEmail;
+        return getUserFirstName().toLowerCase() + "." + getUserLastName().toLowerCase() + "@gmail.com";
+    }
+    public static String getUserGender() {
+        return faker.options().option("Male", "Female", "Other");
+    }
+
+    public static String getUserPhoneNumber() {
+        return faker.phoneNumber().subscriberNumber(10);
     }
 
     public static String getUserBirthDay() {
         return format("%02d", faker.number().numberBetween(1, 9));
     }
 
-    public static String getMonth() {
+    public static String getUserMonthOfBirth() {
         return faker.options().option("January", "February", "March", "April",
                 "May", "June", "July", "August", "September", "October", "November", "December");
     }
 
-    public static String getYear() {
+    public static String getUserYearOfBirth() {
         return format("%s", faker.number().numberBetween(1950, 2007));
     }
 
@@ -88,11 +86,7 @@ return faker.options().option("English", "Maths", "Physics", "Chemistry", "Compu
         return array[index];
     }
 
-    public static String getRandomGender(){
-        String[] genders = {"Male", "Female", "Other"};
 
-        return getRandomItemFromArray(genders);
-    }
 
 
 }
