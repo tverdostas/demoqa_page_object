@@ -2,6 +2,7 @@ package utils;
 
 import com.github.javafaker.Faker;
 
+import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 
 import static java.lang.String.format;
@@ -34,6 +35,39 @@ public class RandomUtils {
     public static String getUserBirthDay() {
         return format("%02d", faker.number().numberBetween(1, 9));
     }
+
+    public static String getMonth() {
+        return faker.options().option("January", "February", "March", "April",
+                "May", "June", "July", "August", "September", "October", "November", "December");
+    }
+
+    public static String getYear() {
+        return format("%s", faker.number().numberBetween(1950, 2007));
+    }
+
+    public static String getSubject(){
+return faker.options().option("English", "Maths", "Physics", "Chemistry", "Computer Science", "Economics", "Arts",
+        "Social Studies", "History", "Civics");
+    }
+
+    public static String getUserHobbies(){
+        return faker.options().option("Sports", "Reading", "Music");
+    }
+
+    public static String getUserPhoto(){
+        return faker.options().option("gif_raсcoon.gif", "jpg_summer.jpg", "png_vinni.png");
+    }
+    
+    public static String getUserAddress(){
+        return faker.address().fullAddress();
+    }
+
+    public static final Map<String, String[]> mapStateWithCity = Map.of(
+            "NCR", new String[]{"Delhi", "Gurgaon", "Noida"},
+            "Uttar Pradesh", new String[]{"Agra", "Lucknow", "Merrut"},
+            "Haryana", new String[]{"Karnal", "Panipat"},
+            "Rajasthan", new String[]{"Jaipur", "Jaiselmer"}
+    );
 
     public static int getRandomInt(int min, int max){
         return ThreadLocalRandom.current().nextInt(min, max + 1);

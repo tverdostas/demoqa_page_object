@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import utils.RandomUtils;
 
+import static utils.RandomUtils.*;
+
 public class FormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
@@ -17,11 +19,11 @@ public class FormTests extends TestBase {
                 setUserEmail(RandomUtils.getUserEmail()).
                 setUserGender(RandomUtils.getRandomGender()).
                 setUserNumber(RandomUtils.getUserPhoneNumber()).
-                setDateOfBirth("30", "July", "1990").
-                setSubjects("Social Studies").
-                setUserHobbies("Music").
-                uploadUserPhoto("test_summer_copy.jpg").
-                setUserAddress("test_address").
+                setDateOfBirth(getUserBirthDay(), getMonth(), getYear()).
+                setSubjects(getSubject()).
+                setUserHobbies(getUserHobbies()).
+                uploadUserPhoto(getUserPhoto()).
+                setUserAddress(getUserAddress()).
                 setUserState("NCR").
                 setUserCity("Gurgaon").
                 clickSubmitButton();
@@ -35,7 +37,7 @@ public class FormTests extends TestBase {
                 .checkResuls("Date of Birth", "30 July,1990")
                 .checkResuls("Subjects", "Social Studies")
                 .checkResuls("Hobbies", "Music")
-                .checkResuls("Picture", "test_summer_copy.jpg")
+                .checkResuls("Picture", "jpg_summer.jpg")
                 .checkResuls("Address", "test_address")
                 .checkResuls("State and City", "NCR Gurgaon");
     }
