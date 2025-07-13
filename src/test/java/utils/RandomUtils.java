@@ -68,6 +68,15 @@ return faker.options().option("English", "Maths", "Physics", "Chemistry", "Compu
             "Haryana", new String[]{"Karnal", "Panipat"},
             "Rajasthan", new String[]{"Jaipur", "Jaiselmer"}
     );
+    public static String getUserState() {
+        return faker.options().option(mapStateWithCity.keySet().toArray()).toString();
+    }
+
+    public static String getUserCity(String state) {
+        return faker.options().option(mapStateWithCity.get(state));
+    }
+
+    public static String city = getUserCity(getUserState());
 
     public static int getRandomInt(int min, int max){
         return ThreadLocalRandom.current().nextInt(min, max + 1);

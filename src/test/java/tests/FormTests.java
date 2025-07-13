@@ -24,8 +24,8 @@ public class FormTests extends TestBase {
                 setUserHobbies(getUserHobbies()).
                 uploadUserPhoto(getUserPhoto()).
                 setUserAddress(getUserAddress()).
-                setUserState("NCR").
-                setUserCity("Gurgaon").
+                setUserState(getUserState()).
+                setUserCity(getUserCity(RandomUtils.city)).
                 clickSubmitButton();
 
         registrationPage.checkTableResultsAppear()
