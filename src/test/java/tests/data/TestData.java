@@ -3,75 +3,73 @@ package tests.data;
 import utils.RandomUtils;
 
 public class TestData {
+    private final String userFirstName = RandomUtils.getUserFirstName();
+    private final String userLastName = RandomUtils.getUserLastName();
+    private final String userEmail = RandomUtils.getUserEmail();
+    private final String userGender = RandomUtils.getUserGender();
+    private final String userPhoneNumber = RandomUtils.getUserPhoneNumber();
+    private final String userBirthDay = RandomUtils.getUserBirthDay();
+    private final String userMonthOfBirth = RandomUtils.getUserMonthOfBirth();
+    private final String userYearOfBirth = RandomUtils.getUserYearOfBirth();
+    private final String userSubject = RandomUtils.getSubject();
+    private final String userHobbies = RandomUtils.getUserHobbies();
+    private final String userPicture = RandomUtils.getUserPhoto();
+    private final String userAddress = RandomUtils.getUserAddress();
+    private final String state = RandomUtils.getUserState();
+    private final String city = RandomUtils.getUserCity(state);
 
-    static String userFirstName = RandomUtils.getUserFirstName();
-    static String userLastName = RandomUtils.getUserLastName();
-    static String userEmail = RandomUtils.getUserEmail();
-    static String userGender = RandomUtils.getUserGender();
-    static String userPhoneNumber = RandomUtils.getUserPhoneNumber();
-    static String userBirthDay = RandomUtils.getUserBirthDay();
-    static String userMonthOfBirth = RandomUtils.getUserMonthOfBirth();
-    static String userYearOfBirth = RandomUtils.getUserYearOfBirth();
-    static String userSubject = RandomUtils.getSubject();
-    static String userHobbies = RandomUtils.getUserHobbies();
-    static String userPicture = RandomUtils.getUserPhoto();
-    static String userAddress = RandomUtils.getUserAddress();
-    static String state = RandomUtils.getUserState();
-    static String city = RandomUtils.getUserCity(state);
-
-    public static String getUserFirstName() {
+    public String getUserFirstName() {
         return userFirstName;
     }
 
-    public static String getUserLastName() {
+    public String getUserLastName() {
         return userLastName;
     }
 
-    public static String getUserEmail() {
+    public String getUserEmail() {
         return userEmail;
     }
 
-    public static String getUserGender() {
+    public String getUserGender() {
         return userGender;
     }
-
-    public static String getUserPhoneNumber() {
+    public String getUserPhoneNumber() {
         return userPhoneNumber;
     }
 
-    public static String getUserBirthDay() {
+    public String getUserBirthDay() {
         return userBirthDay;
     }
 
-    public static String getUserMonthOfBirth() {
+    public String getUserMonthOfBirth() {
         return userMonthOfBirth;
     }
 
-    public static String getUserYearOfBirth() {
+    public String getUserYearOfBirth() {
         return userYearOfBirth;
     }
 
-    public static String getUserSubject() {
+    public String getUserSubject() {
         return userSubject;
     }
 
-    public static String getUserHobbies() {
+    public String getUserHobbies() {
         return userHobbies;
     }
 
-    public static String getUserPicture() {
+    public String getUserPicture() {
         return userPicture;
     }
 
-    public static String getUserAddress() {
+    public String getUserAddress() {
         return userAddress;
     }
 
-    public static String getUserState() {
+    public String getUserState() {
         return state;
     }
 
-    public static String getUserCity() {
+    public String getUserCity() {
         return city;
     }
 

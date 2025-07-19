@@ -7,68 +7,69 @@ import pages.RegistrationPage;
 public class FormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
+    TestData testData = new TestData();
 
     @Test
     void registrationFormAllFieldsTest() {
         registrationPage.openPage()
                 .removeBanners()
-                .setFirstName(TestData.getUserFirstName())
-                .setLastName(TestData.getUserLastName())
-                .setUserEmail(TestData.getUserEmail())
-                .setUserGender(TestData.getUserGender())
-                .setUserNumber(TestData.getUserPhoneNumber())
-                .setDateOfBirth(TestData.getUserBirthDay(), TestData.getUserMonthOfBirth(), TestData.getUserYearOfBirth())
-                .setSubjects(TestData.getUserSubject())
-                .setUserHobbies(TestData.getUserHobbies())
-                .uploadUserPhoto(TestData.getUserPicture())
-                .setUserAddress(TestData.getUserAddress())
-                .setUserState(TestData.getUserState())
-                .setUserCity(TestData.getUserCity())
+                .setFirstName(testData.getUserFirstName())
+                .setLastName(testData.getUserLastName())
+                .setUserEmail(testData.getUserEmail())
+                .setUserGender(testData.getUserGender())
+                .setUserNumber(testData.getUserPhoneNumber())
+                .setDateOfBirth(testData.getUserBirthDay(), testData.getUserMonthOfBirth(), testData.getUserYearOfBirth())
+                .setSubjects(testData.getUserSubject())
+                .setUserHobbies(testData.getUserHobbies())
+                .uploadUserPhoto(testData.getUserPicture())
+                .setUserAddress(testData.getUserAddress())
+                .setUserState(testData.getUserState())
+                .setUserCity(testData.getUserCity())
                 .clickSubmitButton();
 
         registrationPage.checkTableResultsAppear()
                 .checkTableResultsHeader()
-                .checkResuls("Student Name", TestData.getUserFirstName() + " " + TestData.getUserLastName())
-                .checkResuls("Student Email", TestData.getUserEmail())
-                .checkResuls("Gender", TestData.getUserGender())
-                .checkResuls("Mobile", TestData.getUserPhoneNumber())
-                .checkResuls("Date of Birth", TestData.getUserBirthDay() + " " + TestData.getUserMonthOfBirth() + "," + TestData.getUserYearOfBirth())
-                .checkResuls("Subjects", TestData.getUserSubject())
-                .checkResuls("Hobbies", TestData.getUserHobbies())
-                .checkResuls("Picture", TestData.getUserPicture())
-                .checkResuls("Address", TestData.getUserAddress())
-                .checkResuls("State and City", TestData.getUserState() + " " + TestData.getUserCity());
+                .checkResuls("Student Name", testData.getUserFirstName() + " " + testData.getUserLastName())
+                .checkResuls("Student Email", testData.getUserEmail())
+                .checkResuls("Gender", testData.getUserGender())
+                .checkResuls("Mobile", testData.getUserPhoneNumber())
+                .checkResuls("Date of Birth", testData.getUserBirthDay() + " " + testData.getUserMonthOfBirth() + "," + testData.getUserYearOfBirth())
+                .checkResuls("Subjects", testData.getUserSubject())
+                .checkResuls("Hobbies", testData.getUserHobbies())
+                .checkResuls("Picture", testData.getUserPicture())
+                .checkResuls("Address", testData.getUserAddress())
+                .checkResuls("State and City", testData.getUserState() + " " + testData.getUserCity());
     }
 
     @Test
     void registrationFormMinFieldsTest(){
         registrationPage.openPage()
                 .removeBanners()
-                .setFirstName(TestData.getUserFirstName())
-                .setLastName(TestData.getUserLastName())
-                .setUserEmail(TestData.getUserEmail())
-                .setUserGender(TestData.getUserGender())
-                .setUserNumber(TestData.getUserPhoneNumber())
-                .setDateOfBirth(TestData.getUserBirthDay(), TestData.getUserMonthOfBirth(), TestData.getUserYearOfBirth())
+                .setFirstName(testData.getUserFirstName())
+                .setLastName(testData.getUserLastName())
+                .setUserEmail(testData.getUserEmail())
+                .setUserGender(testData.getUserGender())
+                .setUserNumber(testData.getUserPhoneNumber())
+                .setDateOfBirth(testData.getUserBirthDay(), testData.getUserMonthOfBirth(), testData.getUserYearOfBirth())
                 .clickSubmitButton();
 
         registrationPage.checkTableResultsAppear()
-                .checkTableResultsHeader().checkResuls("Student Name", TestData.getUserFirstName() + " " + TestData.getUserLastName())
-                .checkResuls("Student Email", TestData.getUserEmail())
-                .checkResuls("Gender", TestData.getUserGender())
-                .checkResuls("Mobile", TestData.getUserPhoneNumber())
-                .checkResuls("Date of Birth", TestData.getUserBirthDay() + " " + TestData.getUserMonthOfBirth() + "," + TestData.getUserYearOfBirth());
+                .checkTableResultsHeader().checkResuls("Student Name", testData.getUserFirstName() + " " + testData.getUserLastName())
+                .checkResuls("Student Email", testData.getUserEmail())
+                .checkResuls("Gender", testData.getUserGender())
+                .checkResuls("Mobile", testData.getUserPhoneNumber())
+                .checkResuls("Date of Birth", testData.getUserBirthDay() + " " + testData.getUserMonthOfBirth() + "," + testData.getUserYearOfBirth());
     }
 
     @Test
     void registrationFormNegativeTest(){
         registrationPage.openPage().
                 removeBanners()
-                .setFirstName(TestData.getUserFirstName())
-                .setUserEmail(TestData.getUserEmail())
-                .setUserGender(TestData.getUserGender())
-                .setUserNumber(TestData.getUserPhoneNumber())
-                .setDateOfBirth(TestData.getUserBirthDay(), TestData.getUserMonthOfBirth(), TestData.getUserYearOfBirth())
+                .setFirstName(testData.getUserFirstName())
+                .setUserEmail(testData.getUserEmail())
+                .setUserGender(testData.getUserGender())
+                .setUserNumber(testData.getUserPhoneNumber())
+                .setDateOfBirth(testData.getUserBirthDay(), testData.getUserMonthOfBirth(), testData.getUserYearOfBirth())
                 .clickSubmitButton();
 
         registrationPage.checkTableResultsNotAppear();

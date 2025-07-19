@@ -29,7 +29,6 @@ public class RegistrationPage {
     modalDialog = $(".modal-dialog"),
     modalDialogHeader = $("#example-modal-sizes-title-lg");
 
-
     CalendarComponent calendarComponent = new CalendarComponent();
     CheckResulTable checkResulTable = new CheckResulTable();
     UploadFileComponent uploadFileComponent = new UploadFileComponent();
