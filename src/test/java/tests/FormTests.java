@@ -7,10 +7,11 @@ import pages.RegistrationPage;
 public class FormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
-    TestData testData = new TestData();
 
     @Test
     void registrationFormAllFieldsTest() {
+        TestData testData = new TestData();
+
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(testData.getUserFirstName())
@@ -43,6 +44,8 @@ public class FormTests extends TestBase {
 
     @Test
     void registrationFormMinFieldsTest(){
+        TestData testData = new TestData();
+
         registrationPage.openPage()
                 .removeBanners()
                 .setFirstName(testData.getUserFirstName())
@@ -63,6 +66,7 @@ public class FormTests extends TestBase {
 
     @Test
     void registrationFormNegativeTest(){
+        TestData testData = new TestData();
         registrationPage.openPage().
                 removeBanners()
                 .setFirstName(testData.getUserFirstName())
