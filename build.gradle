@@ -9,15 +9,18 @@ tasks.withType(JavaCompile) {
     targetCompatibility = JavaVersion.VERSION_21
 }
 
+def allureVersion = "2.21.0",
+selenideVersion = "6.19.1"
+
 allure {
     report {
-        version.set("2.19.0")
+        version.set(allureVersion)
     }
     adapter {
         aspectjWeaver.set(true)
         frameworks {
             junit5 {
-                adapterVersion.set("2.19.0")
+                adapterVersion.set(allureVersion)
             }
         }
     }
