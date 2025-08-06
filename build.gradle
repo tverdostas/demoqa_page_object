@@ -10,7 +10,7 @@ tasks.withType(JavaCompile) {
 }
 
 def allureVersion = "2.21.0",
-selenideVersion = "6.19.1"
+selenideVersion = "7.9.4"
 
 allure {
     report {
