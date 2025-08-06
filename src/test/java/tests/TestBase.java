@@ -2,6 +2,8 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -30,6 +32,14 @@ public class TestBase {
         options.addArguments("--disable-popup-blocking");
 
         Configuration.browserCapabilities = options;
+
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+
+        // or for fine-tuning:
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide()
+                .screenshots(true)
+                .savePageSource(true)
+        );
     }
 
     @AfterEach
