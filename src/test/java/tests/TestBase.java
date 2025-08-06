@@ -20,7 +20,7 @@ public class TestBase {
 //        }
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless=new");
+        // options.addArguments("--headless=new");
         options.addArguments("--disable-gpu");
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-setuid-sandbox");
