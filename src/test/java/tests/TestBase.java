@@ -19,6 +19,8 @@ public class TestBase {
             options.addArguments("--user-data-dir=/home/jenkins/workspace/anastasiya_elkafrawy_11_lesson_qaguru/chrome_data");
         }
         options.addArguments("--disable-extensions");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
 
         Configuration.browserCapabilities = options;
     }
