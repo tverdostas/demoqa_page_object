@@ -21,6 +21,7 @@ public class TestBase {
         options.addArguments("--disable-extensions");
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
 
         Configuration.browserCapabilities = options;
     }
