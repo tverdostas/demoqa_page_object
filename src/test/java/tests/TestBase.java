@@ -13,6 +13,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "eager";
         Configuration.browserSize = "1920x1080";
         Configuration.browser = "firefox";
+        Configuration.browserVersion = "130.0";
 
 //        ChromeOptions option = new ChromeOptions();
 //        option.addArguments("--incognito");
