@@ -25,7 +25,7 @@ public class TextBoxTests extends TestBase {
                 clickSubmitButton();
         });
         step("Проверить правильность заполнения полей", () -> {
-        textBoxPage.checkOutputName(userFullName).
+        textBoxPage.checkOutputName("test").
                 checkOutputEmail(userEmail).
                 checkOutputCurrentAddress(userCurrentAddress).
                 setPermanentAddress(userPermanentAddress);
