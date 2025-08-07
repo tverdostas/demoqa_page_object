@@ -12,6 +12,7 @@ public class FormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
+
     @Test
     void registrationFormAllFieldsTest() {
         SelenideLogger.addListener("allure", new AllureSelenide());
