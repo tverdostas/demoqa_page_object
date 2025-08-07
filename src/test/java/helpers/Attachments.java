@@ -6,6 +6,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Attachments {
